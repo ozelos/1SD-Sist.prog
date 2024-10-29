@@ -1,2 +1,2 @@
-# 1SD-Sisit.prog
+# 1SD-Sist.prog
 1 projektas
