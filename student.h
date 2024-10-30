@@ -1,37 +1,31 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+#ifndef STUDENTAS_H
+#define STUDENTAS_H
 
 #include <iostream>
 #include <vector>
+#include <list>
+#include <deque>
 #include <string>
 #include <algorithm>
 
-class Student {
+class Studentas {
 private:
     std::string vardas_;
     std::string pavarde_;
     std::vector<int> namuDarbai_;
     int egzaminas_;
-    double galutinisVid_;
-    double galutinisMed_;
+    double galutinis_;
 
 public:
-    // Konstruktoriai ir destruktorius
-    Student();
-    Student(const std::string& vardas, const std::string& pavarde, const std::vector<int>& namuDarbai, int egzaminas);
-    Student(const Student& other); // Kopijavimo konstruktorius
-    Student& operator=(const Student& other); // Priskyrimo operatorius
-    ~Student(); // Destruktorius
+    // Konstruktorius
+    Studentas(const std::string& vardas, const std::string& pavarde, const std::vector<int>& namuDarbai, int egzaminas);
 
-    // Metodai
-    void ivestiDuomenis();
+    // Galutinio balo skaičiavimas
     void skaiciuotiGalutini();
-    double skaiciuotiVidurki() const;
-    double skaiciuotiMediana() const;
+    double getGalutinis() const { return galutinis_; }
 
-    // Operatoriai
-    friend std::istream& operator>>(std::istream& in, Student& student);
-    friend std::ostream& operator<<(std::ostream& out, const Student& student);
+    // Išvedimo operatorius
+    friend std::ostream& operator<<(std::ostream& out, const Studentas& studentas);
 };
 
-#endif // STUDENT_H
+#endif // STUDENTAS_H
